@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="block">
+        <div class="page">
+            <div class="logo">
+            </div>
+            <div class="sign">
+                Sign in to Amazon
+            </div>
+            <div class="use">
+                Use your Google Account
+            </div>
+
+            <input type="text" class="input" id="email" value="Email or phone">
+            <a href="#" class="forgot">Forgot email?</a>
+
+            <input type="password" id="password" class="input">
+            <a href="#" class="forgot">Forgot password?</a>
+
+            <div class="use-guest">
+                Not your computer? Use Guest mode to sign in privately.
+            </div>
+            <a href="#" class="learn">Learn more.</a>
+            <div class="last">
+                <a href="#" class="create">Create Account</a>
+                <div class="next" id="login">
+                    Login
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+
+        </div>
+    </div>
+    <script>
+        let input = document.querySelectorAll(".input");
+
+        input.forEach((next) => {
+            next.addEventListener("click", (e) => {
+                e.target.value = "";
+            });
+        });
+
+        let email = document.querySelector("#email");
+        let password = document.querySelector("#password");
+
+        let login = document.querySelector("#login");
+
+        login.addEventListener("click", (e) => {
+            if(email.value != "" && password.value != ""){
+                window.location.href = "file:///D:/New%20folder/college/oasis_infobyte/Web_developer/Level%202/Task%204/landing_page/index.html";
+            }else{
+                if(email.value == ""){
+                    alert("Email is not given. Please fill it.");
+                }else if(password == ""){
+                    alert("Password is not given. Please fill it.");
+                }else{
+                    alert("Fill the details please.");
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
